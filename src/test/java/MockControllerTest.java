@@ -32,6 +32,7 @@ public class MockControllerTest {
     @Autowired
     private MockController mc;
 
+    private final String SITE_ID = "49V843F";
     @Before
     public void init(){
 	mockMvc = MockMvcBuilders.standaloneSetup(mc).build();
@@ -39,15 +40,15 @@ public class MockControllerTest {
 
     @Test
     public void controllerShouldReturnRightData() throws Exception{
-	String siteId = "49V843F";
-	RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/"+siteId);
+
+	RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/"+SITE_ID);
 
 	ResultActions response = mockMvc.perform(mockGet);
 	response.andDo(MockMvcResultHandlers.print())
 	.andExpect(status().is(200))
 	.andExpect(content().contentType("application/json;charset=UTF-8"))
 	.andExpect(jsonPath("$.site_id").isString())
-	.andExpect(jsonPath("$.site_id").value(siteId))
+	.andExpect(jsonPath("$.site_id").value(SITE_ID))
 	.andExpect(jsonPath("$.goal").isNumber())
 	.andExpect(jsonPath("$.contributions_total").isNumber())
 	.andExpect(jsonPath("$.contributions_count").isNumber());

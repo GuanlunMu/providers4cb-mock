@@ -12,13 +12,13 @@ public class FundingDetail {
      * Constructor with values for all the fields.
      *
      * @param goal
-     *            The Double goal of the campaign
+     *            The double goal of the campaign
      * @param contributionsTotal
-     *            The Double current total of the contributions
+     *            The double current total of the contributions
      * @param contributionsCount
-     *            The Double current number of contributions
+     *            The double current number of contributions
      */
-    public FundingDetail(Double goal, Double contributionsTotal, int contributionsCount) {
+    public FundingDetail(double goal, double contributionsTotal, int contributionsCount) {
 	this.goal = goal;
 	this.contributionsTotal = contributionsTotal;
 	this.contributionsCount = contributionsCount;
@@ -54,13 +54,13 @@ public class FundingDetail {
      * total contributions if the goal was exceeded.
      */
     @JsonProperty(value = "goal", required = true)
-    private Double goal;
+    private double goal;
 
     /**
      * The total amount of contributions.
      */
     @JsonProperty(value = "contributions_total", required = true)
-    private Double contributionsTotal;
+    private double contributionsTotal;
 
     /**
      * The total number of contributions, likely represents the number of
@@ -70,9 +70,30 @@ public class FundingDetail {
     private int contributionsCount;
 
     /**
+     * The url used to retrieve the fundingdetail
+     */
+    @JsonProperty(value = "url", required = true)
+    private String url;
+
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    /**
      * @return the goal
      */
-    public Double getGoal() {
+    public double getGoal() {
 	return goal;
     }
 
@@ -80,14 +101,14 @@ public class FundingDetail {
      * @param goal
      *            the goal to set
      */
-    public void setGoal(Double goal) {
+    public void setGoal(double goal) {
 	this.goal = goal;
     }
 
     /**
      * @return the contributionsTotal
      */
-    public Double getContributionsTotal() {
+    public double getContributionsTotal() {
 	return contributionsTotal;
     }
 
@@ -95,7 +116,7 @@ public class FundingDetail {
      * @param contributionsTotal
      *            the contributionsTotal to set
      */
-    public void setContributionsTotal(Double contributionsTotal) {
+    public void setContributionsTotal(double contributionsTotal) {
 	this.contributionsTotal = contributionsTotal;
     }
 

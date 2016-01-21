@@ -23,6 +23,20 @@ public class MockService {
     private MockDao mockDao;
 
     /**
+     * @return the mockDao
+     */
+    public MockDao getMockDao() {
+        return mockDao;
+    }
+
+    /**
+     * @param mockDao the mockDao to set
+     */
+    public void setMockDao(MockDao mockDao) {
+        this.mockDao = mockDao;
+    }
+
+    /**
      * Return FundingDetail based on the site id
      *
      * @param site_id

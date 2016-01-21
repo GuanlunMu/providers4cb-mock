@@ -39,7 +39,7 @@ public class Campaign {
 
 	this.contributionsCount = ThreadLocalRandom.current().nextInt(countBound);
 
-	
+
     }
 
     /**
