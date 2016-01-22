@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class MockService {
 
     /**
-     * The MockDao is used for accessing the wanted campaign
+     * The MockDao is used for accessing the wanted campaign.
      */
     @Autowired
     private MockDao mockDao;
@@ -26,22 +26,25 @@ public class MockService {
      * @return the mockDao
      */
     public MockDao getMockDao() {
-        return mockDao;
+	return mockDao;
     }
 
     /**
-     * @param mockDao the mockDao to set
+     * @param mockDao
+     *            the mockDao to set
      */
-    public void setMockDao(MockDao mockDao) {
-        this.mockDao = mockDao;
+    public void setMockDao(final MockDao mockDao) {
+	this.mockDao = mockDao;
     }
 
     /**
-     * Return FundingDetail based on the site id
+     * Return FundingDetail based on the site id.
      *
-     * @param site_id
+     * @param siteId
+     *            the site id used to identify the site
+     * @return the FundingDetail on the site of siteId
      */
-    public FundingDetail getFundingDetailBySite(String siteId) {
+    public FundingDetail getFundingDetailBySite(final String siteId) {
 	Campaign c = mockDao.getCampaignBySite(siteId);
 	return new FundingDetail(c);
 

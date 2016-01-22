@@ -17,6 +17,7 @@ public class MockServiceTest {
     private MockService ms;
 
     private final String SITE_ID = "49V843F";
+
     @Test
     public void serviceShouldReturnRightData(){
 	FundingDetail tester = ms.getFundingDetailBySite(SITE_ID);

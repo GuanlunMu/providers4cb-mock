@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The model for the Campaign object
+ * The model for the Campaign object.
  *
  * @author guanlun.mu
  *
@@ -15,21 +15,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Campaign {
 
     /**
-     * Default constructor for Campaign
+     * Default constructor for Campaign.
      */
     public Campaign() {
 	super();
     }
 
     /**
-     * The constructor used for generate a random Campaign
+     * The constructor used for generate a random Campaign.
      *
      * @param goalBound
      *            the upperbound for the random goal number
      * @param countBound
      *            the upperbound for the random contribution_count
      */
-    public Campaign(double goalBound, int countBound) {
+    public Campaign(final double goalBound, final int countBound) {
 	DecimalFormat df = new DecimalFormat("0.00");
 	double goalRaw = ThreadLocalRandom.current().nextDouble(goalBound);
 	this.goal = format(goalRaw, df);
@@ -38,7 +38,6 @@ public class Campaign {
 	this.contributionsTotal = format(conTotalRaw, df);
 
 	this.contributionsCount = ThreadLocalRandom.current().nextInt(countBound);
-
 
     }
 
@@ -98,7 +97,7 @@ public class Campaign {
      * @param id
      *            the id to set.
      */
-    public void setId(String id) {
+    public void setId(final String id) {
 	this.id = id;
     }
 
@@ -113,7 +112,7 @@ public class Campaign {
      * @param siteId
      *            the siteId to set.
      */
-    public void setSiteId(String siteId) {
+    public void setSiteId(final String siteId) {
 	this.siteId = siteId;
     }
 
@@ -128,7 +127,7 @@ public class Campaign {
      * @param type
      *            the type to set.
      */
-    public void setType(String type) {
+    public void setType(final String type) {
 	this.type = type;
     }
 
@@ -143,7 +142,7 @@ public class Campaign {
      * @param goal
      *            the goal to set.
      */
-    public void setGoal(Double goal) {
+    public void setGoal(final Double goal) {
 	this.goal = goal;
     }
 
@@ -158,7 +157,7 @@ public class Campaign {
      * @param contributionsTotal
      *            the contributionsTotal to set.
      */
-    public void setContributionsTotal(Double contributionsTotal) {
+    public void setContributionsTotal(final double contributionsTotal) {
 	this.contributionsTotal = contributionsTotal;
     }
 
@@ -173,7 +172,7 @@ public class Campaign {
      * @param contributionsCount
      *            the contributionsCount to set.
      */
-    public void setContributionsCount(int contributionsCount) {
+    public void setContributionsCount(final int contributionsCount) {
 	this.contributionsCount = contributionsCount;
     }
 
@@ -188,11 +187,20 @@ public class Campaign {
      * @param campaingSiteUrl
      *            the campaingSiteUrl to set.
      */
-    public void setCampaingSiteUrl(String campaingSiteUrl) {
+    public void setCampaingSiteUrl(final String campaingSiteUrl) {
 	this.campaingSiteUrl = campaingSiteUrl;
     }
 
-    private double format(double d, DecimalFormat df) {
+    /**
+     * A help method to round the double value to two significant value.
+     *
+     * @param d
+     *            the double need to be formated
+     * @param df
+     *            the format for this double
+     * @return formatted value
+     */
+    private double format(final double d, final DecimalFormat df) {
 	return Double.valueOf(df.format(d));
     }
 }

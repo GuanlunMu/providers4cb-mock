@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.9">
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\test\java\CampaignTest.java">
+<error line="1" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.junit.Assert.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" column="8" severity="error" message="Unused import - org.junit.runner.RunWith." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="6" column="8" severity="error" message="Unused import - org.junit.runners.Suite." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="7" column="8" severity="error" message="Unused import - org.junit.runners.Suite.SuiteClasses." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="9" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="11" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="13" column="40" severity="error" message="&apos;1000&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="13" column="46" severity="error" message="&apos;10&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="14" column="75" severity="error" message="&apos;1000&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="15" column="101" severity="error" message="&apos;10&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\test\java\MockControllerTest.java">
+<error line="3" column="8" severity="error" message="Unused import - org.caringbridge.providers.services.MockService." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="15" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.test.web.servlet.result.MockMvcResultMatchers.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.test.web.servlet.result.MockMvcResultMatchers.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="16" column="1" severity="error" message="Duplicate import to line 15 - org.springframework.test.web.servlet.result.MockMvcResultMatchers.*." source="com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck"/>
+<error line="17" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.test.web.servlet.setup.MockMvcBuilders.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="18" column="8" severity="error" message="Unused import - javax.annotation.Resource." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="19" column="8" severity="error" message="Unused import - javax.ws.rs.core.MediaType." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="21" column="8" severity="error" message="Unused import - org.springframework.web.context.WebApplicationContext." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="22" column="8" severity="error" message="Unused import - org.springframework.web.servlet.config.annotation.EnableWebMvc." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="25" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="29" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="31" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="34" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="34" column="26" severity="error" message="Name &apos;SITE_ID&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="35" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="36" column="23" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="40" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="41" column="67" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="43" column="73" severity="error" message="&apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="43" column="74" severity="error" message="&apos;+&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="47" column="32" severity="error" message="&apos;200&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\test\java\MockDaoTest.java">
+<error line="1" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.junit.Assert.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="12" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="16" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="19" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="19" column="26" severity="error" message="Name &apos;SITE_ID&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="21" severity="error" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
+<error line="29" column="48" severity="error" message="&apos;100&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="30" column="34" severity="error" message="&apos;10000&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="34" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="40" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\test\java\MockServiceTest.java">
+<error line="1" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.junit.Assert.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="12" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="16" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="19" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="19" column="26" severity="error" message="Name &apos;SITE_ID&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="21" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="22" column="47" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="25" column="27" severity="error" message="&apos;cast&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="25" column="58" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="26" column="30" severity="error" message="&apos;cast&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="26" column="61" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="26" column="92" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="27" column="30" severity="error" message="&apos;cast&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="27" column="47" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="27" column="64" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+</file>
+</checkstyle>

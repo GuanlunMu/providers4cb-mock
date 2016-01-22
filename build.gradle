@@ -21,7 +21,7 @@ apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-//apply plugin: 'checkstyle'
+apply plugin: 'checkstyle'
 apply plugin: 'net.researchgate.release'
 apply plugin: 'org.sonarqube'
 
@@ -75,10 +75,10 @@ task wrapper(type: Wrapper) {
 
 File checkstyleConfigFile = file("${project.projectDir}/src/main/resources/config/checkstyle/checkstyle.xml")
 
-//checkstyle {
-//    configFile = checkstyleConfigFile
-//    ignoreFailures = true
-//}
+checkstyle {
+    configFile = checkstyleConfigFile
+    ignoreFailures = true
+}
 
 sonarqube {
     properties {

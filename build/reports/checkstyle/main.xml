@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.9">
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\CbMockProviderApplication.java">
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\controllers\MockController.java">
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\dao\MockDao.java">
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\model\Campaign.java">
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\model\FundingDetail.java">
+</file>
+<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\services\MockService.java">
+</file>
+</checkstyle>

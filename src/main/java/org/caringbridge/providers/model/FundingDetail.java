@@ -2,8 +2,18 @@ package org.caringbridge.providers.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The object that will finally be parsed as json returned from this
+ * mock-provider microservice.
+ *
+ * @author guanlun.mu
+ *
+ */
 public class FundingDetail {
 
+    /**
+     * Default constructor.
+     */
     public FundingDetail() {
 	super();
     }
@@ -18,35 +28,43 @@ public class FundingDetail {
      * @param contributionsCount
      *            The double current number of contributions
      */
-    public FundingDetail(double goal, double contributionsTotal, int contributionsCount) {
+    public FundingDetail(final double goal, final double contributionsTotal, final int contributionsCount) {
 	this.goal = goal;
 	this.contributionsTotal = contributionsTotal;
 	this.contributionsCount = contributionsCount;
     }
 
-    public FundingDetail(Campaign c) {
+    /**
+     * Constructor for parsing a Campaign instance to a FundingDetail instance.
+     *
+     * @param c the Campaign that need to parsed
+     */
+    public FundingDetail(final Campaign c) {
 	this.goal = c.getGoal();
 	this.contributionsCount = c.getContributionsCount();
 	this.contributionsTotal = c.getContributionsTotal();
 	this.siteId = c.getSiteId();
     }
+
     /**
-     * The site id used to identify the site_id
+     * The site id used to identify the site_id.
      */
     @JsonProperty(value = "site_id", required = true)
     private String siteId;
+
     /**
      * @return the siteId
      */
     public String getSiteId() {
-        return siteId;
+	return siteId;
     }
 
     /**
-     * @param siteId the siteId to set
+     * @param siteId
+     *            the siteId to set
      */
-    public void setSiteId(String siteId) {
-        this.siteId = siteId;
+    public void setSiteId(final String siteId) {
+	this.siteId = siteId;
     }
 
     /**
@@ -70,24 +88,24 @@ public class FundingDetail {
     private int contributionsCount;
 
     /**
-     * The url used to retrieve the fundingdetail
+     * The url used to retrieve the fundingdetail.
      */
     @JsonProperty(value = "url", required = true)
     private String url;
-
 
     /**
      * @return the url
      */
     public String getUrl() {
-        return url;
+	return url;
     }
 
     /**
-     * @param url the url to set
+     * @param url
+     *            the url to set
      */
-    public void setUrl(String url) {
-        this.url = url;
+    public void setUrl(final String url) {
+	this.url = url;
     }
 
     /**
@@ -101,7 +119,7 @@ public class FundingDetail {
      * @param goal
      *            the goal to set
      */
-    public void setGoal(double goal) {
+    public void setGoal(final double goal) {
 	this.goal = goal;
     }
 
@@ -116,7 +134,7 @@ public class FundingDetail {
      * @param contributionsTotal
      *            the contributionsTotal to set
      */
-    public void setContributionsTotal(double contributionsTotal) {
+    public void setContributionsTotal(final double contributionsTotal) {
 	this.contributionsTotal = contributionsTotal;
     }
 
@@ -131,7 +149,7 @@ public class FundingDetail {
      * @param contributionsCount
      *            the contributionsCount to set
      */
-    public void setContributionsCount(int contributionsCount) {
+    public void setContributionsCount(final int contributionsCount) {
 	this.contributionsCount = contributionsCount;
     }
 }
