@@ -1,3 +1,7 @@
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.caringbridge.providers.CbMockProviderApplication;
 import org.caringbridge.providers.controllers.MockController;
 import org.junit.Before;
@@ -14,6 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(CbMockProviderApplication.class)

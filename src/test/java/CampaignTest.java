@@ -1,10 +1,7 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.caringbridge.providers.model.Campaign;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
 
 public class CampaignTest {
 

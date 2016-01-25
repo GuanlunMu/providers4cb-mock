@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="5.9">
-<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\CbMockProviderApplication.java">
+<file name="/Users/alexblanco/workspace/caringbridge/providers4cb-mock/src/main/java/org/caringbridge/providers/CbMockProviderApplication.java">
+<error line="4" column="8" severity="error" message="import no usado - org.springframework.boot.autoconfigure.SpringBootApplication." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="7" column="1" severity="error" message="import duplicado en la línea 5 - org.springframework.context.annotation.ComponentScan." source="com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck"/>
 </file>
-<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\controllers\MockController.java">
+<file name="/Users/alexblanco/workspace/caringbridge/providers4cb-mock/src/main/java/org/caringbridge/providers/controllers/MockController.java">
 </file>
-<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\dao\MockDao.java">
+<file name="/Users/alexblanco/workspace/caringbridge/providers4cb-mock/src/main/java/org/caringbridge/providers/dao/MockDao.java">
 </file>
-<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\model\Campaign.java">
+<file name="/Users/alexblanco/workspace/caringbridge/providers4cb-mock/src/main/java/org/caringbridge/providers/model/Campaign.java">
 </file>
-<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\model\FundingDetail.java">
+<file name="/Users/alexblanco/workspace/caringbridge/providers4cb-mock/src/main/java/org/caringbridge/providers/model/FundingDetail.java">
 </file>
-<file name="C:\Users\guanlun.mu\Desktop\Caring Bridege Micro-service\providers4cb-mock\src\main\java\org\caringbridge\providers\services\MockService.java">
+<file name="/Users/alexblanco/workspace/caringbridge/providers4cb-mock/src/main/java/org/caringbridge/providers/services/MockService.java">
 </file>
 </checkstyle>
