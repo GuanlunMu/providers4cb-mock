@@ -1,6 +1,8 @@
 package org.caringbridge.providers.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
  * The object that will finally be parsed as json returned from this
@@ -9,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author guanlun.mu
  *
  */
+@ApiModel(value = "FundingDetail", description = "Funding detail that shows the goal, contribution total and contribution count")
 public class FundingDetail {
 
     /**
@@ -50,6 +53,7 @@ public class FundingDetail {
      * The site id used to identify the site_id.
      */
     @JsonProperty(value = "site_id", required = true)
+    @ApiModelProperty(value = "Identifier for the site", required = true)
     private String siteId;
 
     /**
@@ -72,12 +76,14 @@ public class FundingDetail {
      * total contributions if the goal was exceeded.
      */
     @JsonProperty(value = "goal", required = true)
+    @ApiModelProperty(value = "The goal of this campaign", required = true)
     private double goal;
 
     /**
      * The total amount of contributions.
      */
     @JsonProperty(value = "contributions_total", required = true)
+    @ApiModelProperty(value = "The contribution has been collected", required = true)
     private double contributionsTotal;
 
     /**
@@ -85,12 +91,14 @@ public class FundingDetail {
      * contributors.
      */
     @JsonProperty(value = "contributions_count", required = true)
+    @ApiModelProperty(value = "Number of people contribute to this campaign", required = true)
     private int contributionsCount;
 
     /**
      * The url used to retrieve the fundingdetail.
      */
     @JsonProperty(value = "url", required = true)
+    @ApiModelProperty(value = "The url to the campaign on the third party's site", required = true)
     private String url;
 
     /**

@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
  * The model for the Campaign object.
@@ -12,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  */
 
+@ApiModel(value = "Campaign", description = "Campaign that show the information about a specific campaign")
 public class Campaign {
 
     /**
@@ -45,12 +48,14 @@ public class Campaign {
      * The internal identification number for this campaign.
      */
     @JsonProperty(value = "id", required = true)
+    @ApiModelProperty(value = "id for this campaign", required = true)
     private String id;
 
     /**
      * The id of the site that is linked to a founding campaign.
      */
     @JsonProperty(value = "site_id", required = true)
+    @ApiModelProperty(value = "site that this campaign is located", required = true)
     private String siteId;
 
     /**
@@ -58,6 +63,7 @@ public class Campaign {
      * provider partner for the object,
      */
     @JsonProperty(value = "type", required = true)
+    @ApiModelProperty(value = "type of the campaign provider", required = true)
     private String type;
 
     /**
@@ -65,12 +71,14 @@ public class Campaign {
      * total contributions if the goal was exceeded.
      */
     @JsonProperty(value = "goal", required = false)
+    @ApiModelProperty(value = "goal of the campaign", required = true)
     private Double goal;
 
     /**
      * The total amount of contributions.
      */
     @JsonProperty(value = "contributions_total", required = false)
+    @ApiModelProperty(value = "amount of money that has been collected", required = true)
     private Double contributionsTotal;
 
     /**
@@ -78,12 +86,14 @@ public class Campaign {
      * contributors.
      */
     @JsonProperty(value = "contributions_count", required = false)
+    @ApiModelProperty(value = "amount of person who contributed", required = true)
     private int contributionsCount;
 
     /**
      * The url to the web site for viewing and managing the campaign.
      */
     @JsonProperty(value = "campaign_site_url", required = false)
+    @ApiModelProperty(value = "the site url that this campaign is on", required = true)
     private String campaingSiteUrl;
 
     /**
