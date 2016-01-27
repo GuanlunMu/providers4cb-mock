@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 
-//@SpringBootApplication
+@SpringBootApplication
 @EnableAutoConfiguration()
 @ComponentScan("org.caringbridge.providers")
 public class CbMockProviderApplication {

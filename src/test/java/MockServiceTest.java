@@ -16,12 +16,11 @@ public class MockServiceTest {
     @Autowired
     private MockService ms;
 
-    private final String SITE_ID = "49V843F";
+    private final String ID = "49V843F";
 
     @Test
     public void serviceShouldReturnRightData(){
-	FundingDetail tester = ms.getFundingDetailBySite(SITE_ID);
-	assertEquals(SITE_ID, tester.getSiteId());
+	FundingDetail tester = ms.getFundingDetailById(ID);
 	assertEquals((int)tester.getContributionsCount(),tester.getContributionsCount());
 	assertEquals((double)tester.getContributionsTotal(),tester.getContributionsTotal(),0.0);
 	assertEquals((double)tester.getGoal(),tester.getGoal(),0.0);

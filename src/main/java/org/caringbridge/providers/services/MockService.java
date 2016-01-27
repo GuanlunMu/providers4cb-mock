@@ -16,38 +16,39 @@ import org.springframework.stereotype.Service;
 @Service
 public class MockService {
 
-    /**
-     * The MockDao is used for accessing the wanted campaign.
-     */
-    @Autowired
-    private MockDao mockDao;
+	/**
+	 * The MockDao is used for accessing the wanted campaign.
+	 */
+	@Autowired
+	private MockDao mockDao;
 
-    /**
-     * @return the mockDao
-     */
-    public MockDao getMockDao() {
-	return mockDao;
-    }
+	/**
+	 * @return the mockDao
+	 */
+	public MockDao getMockDao() {
+		return mockDao;
+	}
 
-    /**
-     * @param mockDao
-     *            the mockDao to set
-     */
-    public void setMockDao(final MockDao mockDao) {
-	this.mockDao = mockDao;
-    }
+	/**
+	 * @param mockDao
+	 *            the mockDao to set
+	 */
+	public void setMockDao(final MockDao mockDao) {
+		this.mockDao = mockDao;
+	}
 
-    /**
-     * Return FundingDetail based on the site id.
-     *
-     * @param siteId
-     *            the site id used to identify the site
-     * @return the FundingDetail on the site of siteId
-     */
-    public FundingDetail getFundingDetailBySite(final String siteId) {
-	Campaign c = mockDao.getCampaignBySite(siteId);
-	return new FundingDetail(c);
+	/**
+	 * Return FundingDetail based on the provider id.
+	 *
+	 * @param providerId
+	 *            the provider id used to identify the campaign, hence the
+	 *            funding detail
+	 * @return the FundingDetail on the provider of providerId
+	 */
+	public FundingDetail getFundingDetailById(final String providerId) {
+		Campaign c = mockDao.getCampaignById(providerId);
+		return new FundingDetail(c);
 
-    }
+	}
 
 }

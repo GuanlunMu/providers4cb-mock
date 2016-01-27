@@ -25,8 +25,8 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		ApiInfo apiInfo = new ApiInfo("SaurzCode API", "API for Saurzcode", "Saurzcode API terms of service",
-				"mail2saurzcode@gmail.com", "Saurzcode API Licence Type", "Saurzcode API License URL");
+		ApiInfo apiInfo = new ApiInfo("Mock Service API", "API for mocked third party fundraising provider", "API terms of service",
+				"GuanlunMu@gmail.com", "Mock API Licence Type", "Mock API License URL");
 		return apiInfo;
 	}
 

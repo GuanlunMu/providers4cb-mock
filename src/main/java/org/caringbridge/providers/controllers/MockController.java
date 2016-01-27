@@ -36,17 +36,17 @@ public class MockController {
 	/**
 	 * The controller for handling the mock-data request.
 	 *
-	 * @param siteId
-	 *            the site id to identify the site on Caring Bridge
+	 * @param providerId
+	 *            the provider id to identify the campaign, hence the funding details
 	 * @return The FundingDetail object
 	 */
 	@Path("/{id}")
-	@ApiOperation(value = "Getting FundingDe-tail on a certain site", notes = "Getting FundingDetail on a certain site", produces = "application/json", httpMethod = "GET")
-	@ApiResponse(code = 404, message = "No Funding Detail on this Site")
+	@ApiOperation(value = "Getting FundingDetail based on provider id", notes = "Getting FundingDetail based on provider id", produces = "application/json", httpMethod = "GET")
+	@ApiResponse(code = 404, message = "No Funding Detail Found")
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public FundingDetail getFundingDetail(
-			@ApiParam(name = "site_id", value = "site id of the site", required = true) @PathVariable("id") final String siteId) {
-		return mockService.getFundingDetailBySite(siteId);
+			@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) @PathVariable("id") final String providerId) {
+		return mockService.getFundingDetailById(providerId);
 	}
 
 	/**
