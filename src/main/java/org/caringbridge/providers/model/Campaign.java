@@ -51,12 +51,6 @@ public class Campaign {
 	@ApiModelProperty(value = "id for this campaign", required = true)
 	private String id;
 
-	/**
-	 * The id of the site that is linked to a founding campaign.
-	 */
-	@JsonProperty(value = "site_id", required = true)
-	@ApiModelProperty(value = "site that this campaign is located", required = true)
-	private String siteId;
 
 	/**
 	 * The type of campaign ran for a site. This will identify the type of
@@ -111,20 +105,6 @@ public class Campaign {
 		this.id = id;
 	}
 
-	/**
-	 * @return the siteId.
-	 */
-	public String getSiteId() {
-		return siteId;
-	}
-
-	/**
-	 * @param siteId
-	 *            the siteId to set.
-	 */
-	public void setSiteId(final String siteId) {
-		this.siteId = siteId;
-	}
 
 	/**
 	 * @return the type.

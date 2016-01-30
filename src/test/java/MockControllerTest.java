@@ -24,29 +24,28 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @SpringApplicationConfiguration(CbMockProviderApplication.class)
 public class MockControllerTest {
 
-    private MockMvc mockMvc;
+	private MockMvc mockMvc;
 
-    @Autowired
-    private MockController mc;
+	@Autowired
+	private MockController mc;
 
-    private final String ID = "49V843F";
-    @Before
-    public void init(){
-	mockMvc = MockMvcBuilders.standaloneSetup(mc).build();
-    }
+	private final String ID = "49V843F";
 
-    @Test
-    public void controllerShouldReturnRightData() throws Exception{
+	@Before
+	public void init() {
+		mockMvc = MockMvcBuilders.standaloneSetup(mc).build();
+	}
 
-	RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/"+ID);
+	@Test
+	public void controllerShouldReturnRightData() throws Exception {
 
-	ResultActions response = mockMvc.perform(mockGet);
-	response.andDo(MockMvcResultHandlers.print())
-	.andExpect(status().is(200))
-	.andExpect(content().contentType("application/json;charset=UTF-8"))
-	.andExpect(jsonPath("$.goal").isNumber())
-	.andExpect(jsonPath("$.contributions_total").isNumber())
-	.andExpect(jsonPath("$.contributions_count").isNumber());
-    }
+		RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/" + ID);
+
+		ResultActions response = mockMvc.perform(mockGet);
+		response.andDo(MockMvcResultHandlers.print()).andExpect(status().is(200))
+				.andExpect(content().contentType("application/json;charset=UTF-8"))
+				.andExpect(jsonPath("$.goal").isNumber()).andExpect(jsonPath("$.contributions_total").isNumber())
+				.andExpect(jsonPath("$.contributions_count").isNumber());
+	}
 
 }

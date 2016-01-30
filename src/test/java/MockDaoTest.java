@@ -41,7 +41,6 @@ public class MockDaoTest {
     public void campaignReturnedShouldHaveOtherFieldsAsNull() {
 	Campaign c = tester.getCampaignById(ID);
 	assertTrue(c.getCampaingSiteUrl() == null);
-	assertTrue(c.getSiteId() == null);
 	assertTrue(c.getType() == null);
     }
 

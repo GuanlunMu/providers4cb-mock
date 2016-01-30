@@ -33,6 +33,7 @@ public class MockDao {
 	public Campaign getCampaignById(final String providerId) {
 		Campaign result = new Campaign(GOAL_UPPER_BOUND, CONTRIBUTION_COUNT_UPPER_BOUND);
 		result.setId(providerId);
+		result.setCampaingSiteUrl("http://mock.com");
 		return result;
 
 	}
