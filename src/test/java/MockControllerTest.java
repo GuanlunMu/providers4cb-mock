@@ -15,11 +15,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(CbMockProviderApplication.class)
 public class MockControllerTest {
@@ -29,7 +25,7 @@ public class MockControllerTest {
 	@Autowired
 	private MockController mc;
 
-	private final String ID = "49V843F";
+	private final String PROVIDER_ID = "49V843F";
 
 	@Before
 	public void init() {
@@ -39,7 +35,7 @@ public class MockControllerTest {
 	@Test
 	public void controllerShouldReturnRightData() throws Exception {
 
-		RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/" + ID);
+		RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/GFM/funding/" + PROVIDER_ID);
 
 		ResultActions response = mockMvc.perform(mockGet);
 		response.andDo(MockMvcResultHandlers.print()).andExpect(status().is(200))

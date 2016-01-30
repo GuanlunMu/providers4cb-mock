@@ -1,5 +1,8 @@
 package org.caringbridge.providers.model;
 
+import java.text.DecimalFormat;
+import java.util.concurrent.ThreadLocalRandom;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -9,66 +12,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author guanlun.mu
  *
  */
-public class FundingDetail {
+public class Funding {
 
 	/**
 	 * Default constructor.
 	 */
-	public FundingDetail() {
+	public Funding() {
 		super();
 	}
 
 	/**
-	 * Constructor with values for all the fields.
+	 * The constructor used for generate a fake Funding with random data.
 	 *
-	 * @param goal
-	 *            The double goal of the campaign
-	 * @param contributionsTotal
-	 *            The double current total of the contributions
-	 * @param contributionsCount
-	 *            The double current number of contributions
+	 * @param goalBound
+	 *            the upper bound for the random goal number
+	 * @param countBound
+	 *            the upper bound for the random contribution_count
 	 */
-	public FundingDetail(final double goal, final double contributionsTotal, final int contributionsCount) {
-		this.goal = goal;
-		this.contributionsTotal = contributionsTotal;
-		this.contributionsCount = contributionsCount;
+	public Funding(final double goalBound, final int countBound) {
+		DecimalFormat df = new DecimalFormat("0.00");
+		double goalRaw = ThreadLocalRandom.current().nextDouble(goalBound);
+		this.goal = format(goalRaw, df);
+
+		double conTotalRaw = ThreadLocalRandom.current().nextDouble(this.goal);
+		this.contributionsTotal = format(conTotalRaw, df);
+
+		this.contributionsCount = ThreadLocalRandom.current().nextInt(countBound);
+
 	}
 
-	/**
-	 * Constructor for parsing a Campaign instance to a FundingDetail instance.
-	 *
-	 * @param c
-	 *            the Campaign that need to parsed
-	 */
-	public FundingDetail(final Campaign c) {
-		this.goal = c.getGoal();
-		this.contributionsCount = c.getContributionsCount();
-		this.contributionsTotal = c.getContributionsTotal();
-		this.providerId = c.getId();
-		this.url = c.getCampaingSiteUrl();
-	}
 
 	/**
-	 * The site id used to identify the site_id.
+	 * The provider id used to identify the Funding.
 	 */
 	@JsonProperty(value = "provider_id", required = true)
 	private String providerId;
 
-	/**
-	 * @return the siteId
-	 */
-	public String getProviderId() {
-		return providerId;
-	}
-
-	/**
-	 * @param siteId
-	 *            the siteId to set
-	 */
-	public void setSiteId(final String providerId) {
-		this.providerId = providerId;
-	}
-
+	
 	/**
 	 * The targeted amount for the campaign. This amount could be less than the
 	 * total contributions if the goal was exceeded.
@@ -94,6 +74,22 @@ public class FundingDetail {
 	 */
 	@JsonProperty(value = "url", required = true)
 	private String url;
+	
+	/**
+	 * @return the siteId
+	 */
+	public String getProviderId() {
+		return providerId;
+	}
+
+	/**
+	 * @param providerId
+	 *            the providerId to set
+	 */
+	public void setProviderId(final String providerId) {
+		this.providerId = providerId;
+	}
+
 
 	/**
 	 * @return the url
@@ -153,5 +149,18 @@ public class FundingDetail {
 	 */
 	public void setContributionsCount(final int contributionsCount) {
 		this.contributionsCount = contributionsCount;
+	}
+	
+	/**
+	 * A help method to round the double value to two significant value.
+	 *
+	 * @param d
+	 *            the double need to be formated
+	 * @param df
+	 *            the format for this double
+	 * @return formatted value
+	 */
+	private double format(final double d, final DecimalFormat df) {
+		return Double.valueOf(df.format(d));
 	}
 }
