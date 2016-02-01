@@ -61,7 +61,8 @@ public class MockController {
 	@ApiResponse(code = 404, message = "No Funding Found")
 	@RequestMapping(path = "/{type}/funding/{provider_id}", method = RequestMethod.GET)
 	public Funding getFunding(
-			@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) @PathVariable("provider_id") final String providerId) {
+			@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) 
+			@PathVariable("provider_id") final String providerId) {
 		return mockService.getFundingByProviderId(providerId);
 	}
 
