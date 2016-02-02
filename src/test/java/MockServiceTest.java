@@ -13,7 +13,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = CbMockProviderApplication.class)
 @WebAppConfiguration
-
 public class MockServiceTest {
 
     @Autowired

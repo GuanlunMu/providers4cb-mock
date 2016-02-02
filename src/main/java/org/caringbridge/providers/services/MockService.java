@@ -56,8 +56,8 @@ public class MockService {
 	 * @return the Provider of the type.
 	 */
 
-	public Provider getProviderByType(final String type) {
-		return mockDao.getProviderByType(type);
+	public Provider getProviderInfo() {
+		return mockDao.getProviderInfo();
 	}
 
 }

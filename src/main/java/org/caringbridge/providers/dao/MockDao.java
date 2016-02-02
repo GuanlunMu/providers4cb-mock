@@ -36,7 +36,7 @@ public class MockDao {
 	/**
 	 * The description of the Provider.
 	 */
-	public static final String DESCRIPTION = "This is a mock provider service generating fake Funing";
+	public static final String DESCRIPTION = "This is a mock provider service generating fake Funding";
 
 	/**
 	 * Returning the Funding based on provider_id, in this case, it will only
@@ -62,7 +62,7 @@ public class MockDao {
 	 * @return Provider information.
 	 */
 
-	public Provider getProviderByType(final String type) {
+	public Provider getProviderInfo(){
 		Provider result = new Provider();
 		result.setName(TYPE);
 		result.setUrl(URL);

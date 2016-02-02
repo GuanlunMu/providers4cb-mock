@@ -1,7 +1,6 @@
 package org.caringbridge.providers.controllers;
 
 
-import javax.ws.rs.Path;
 import org.caringbridge.providers.model.Funding;
 import org.caringbridge.providers.model.Provider;
 import org.caringbridge.providers.services.MockService;
@@ -41,12 +40,11 @@ public class MockController {
 	 * @return the Provider information.
 	 */
 
-	@ApiOperation(value = "/{type}", notes = "Getting Provider information based on type", produces = "application/json", httpMethod = "GET")
-	@ApiResponse(code = 404, message = "No Provider Found")
-	@RequestMapping(path = "/{type}", method = RequestMethod.GET)
-	public Provider getProvider(
-			@ApiParam(name = "type", value = "type of the provider", required = true) @PathVariable("type") final String type) {
-		return mockService.getProviderByType(type);
+	@ApiOperation(value = "/mock", notes = "Getting Provider information based of mock provider", produces = "application/json", httpMethod = "GET")
+	@ApiResponse(code = 404, message = "No Information Found for this Provider")
+	@RequestMapping(path = "/mock", method = RequestMethod.GET)
+	public Provider getProvider() {
+		return mockService.getProviderInfo();
 
 	}
 
@@ -57,9 +55,9 @@ public class MockController {
 	 *            the provider id to identify the funding.
 	 * @return The Funding object
 	 */
-	@ApiOperation(value = "/{type}/funding/{provider_id}", notes = "Getting FundingDetail based on provider id", produces = "application/json", httpMethod = "GET")
+	@ApiOperation(value = "/mock/funding/{provider_id}", notes = "Getting FundingDetail based on provider id", produces = "application/json", httpMethod = "GET")
 	@ApiResponse(code = 404, message = "No Funding Found")
-	@RequestMapping(path = "/{type}/funding/{provider_id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/mock/funding/{provider_id}", method = RequestMethod.GET)
 	public Funding getFunding(
 			@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) 
 			@PathVariable("provider_id") final String providerId) {

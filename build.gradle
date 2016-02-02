@@ -73,8 +73,8 @@ checkstyle {
 sonarqube {
     properties {
         property "sonar.host.url", "http://jenkins.caringbridge.org:9000/"
-        property "sonar.projectKey", "cb-campaing-microservice"
-        property "sonar.projectDescription", "Campaigns micro-service application to communicate with external founding partners"
+        property "sonar.projectKey", "providers4cb-mock"
+        property "sonar.projectDescription", "Mock provider service for Campaign Micro-service"
         property "sonar.projectVersion", "${version}"
     }
 }
