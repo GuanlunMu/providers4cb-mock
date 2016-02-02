@@ -1,14 +1,13 @@
 package org.caringbridge.providers.services;
 
 import org.caringbridge.providers.dao.MockDao;
-import org.caringbridge.providers.model.Campaign;
-import org.caringbridge.providers.model.FundingDetail;
+import org.caringbridge.providers.model.Funding;
+import org.caringbridge.providers.model.Provider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * The functonality of ProviderService include: 1. Using the ProviderDao to get
- * the Campaign 2. Transfer from Campaign to FundingDetail
+ * The service layer to serve the controller.
  *
  * @author guanlun.mu
  *
@@ -38,17 +37,27 @@ public class MockService {
 	}
 
 	/**
-	 * Return FundingDetail based on the provider id.
+	 * Return Funding based on the provider id.
 	 *
 	 * @param providerId
-	 *            the provider id used to identify the campaign, hence the
-	 *            funding detail
-	 * @return the FundingDetail on the provider of providerId
+	 *            the provider id used to identify the Funding
+	 * @return the Funding based on the provider id
 	 */
-	public FundingDetail getFundingDetailById(final String providerId) {
-		Campaign c = mockDao.getCampaignById(providerId);
-		return new FundingDetail(c);
+	public Funding getFundingByProviderId(final String providerId) {
+		return mockDao.getFundingByProviderId(providerId);
 
+	}
+
+	/**
+	 * Return Provider information based on provider type.
+	 * 
+	 * @param type
+	 *            type of the provider.
+	 * @return the Provider of the type.
+	 */
+
+	public Provider getProviderInfo() {
+		return mockDao.getProviderInfo();
 	}
 
 }

@@ -2,21 +2,23 @@ import static org.junit.Assert.*;
 
 import org.caringbridge.providers.CbMockProviderApplication;
 import org.caringbridge.providers.dao.MockDao;
-import org.caringbridge.providers.model.Campaign;
+import org.caringbridge.providers.model.Funding;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = CbMockProviderApplication.class)
+@WebAppConfiguration
 public class MockDaoTest {
 
     @Autowired
     private MockDao tester;
 
-    private final String ID = "49V843F";
+    private final String PROVIDER_ID = "49V843F";
 
     /**
      * Test whether goal and contributon_count are smaller than goal's upper
@@ -24,25 +26,17 @@ public class MockDaoTest {
      * contribution_total smaller than goal
      */
     @Test
-    public void campaignReturnedShouldHaveCorrectNumber() {
-	Campaign c = tester.getCampaignById(ID);
-	assertTrue(c.getContributionsCount() < 100);
-	assertTrue(c.getGoal() < 10000);
-	assertTrue(c.getContributionsTotal() < c.getGoal());
+    public void fundingReturnedShouldHaveCorrectNumber() {
+	Funding f = tester.getFundingByProviderId(PROVIDER_ID);
+	assertTrue(f.getContributionsCount() < 100);
+	assertTrue(f.getGoal() < 10000);
+	assertTrue(f.getContributionsTotal() < f.getGoal());
     }
 
     @Test
-    public void campaignReturnedShouldHaveCorrectId() {
-	Campaign c = tester.getCampaignById(ID);
-	assertEquals(ID, c.getId());
-    }
-
-    @Test
-    public void campaignReturnedShouldHaveOtherFieldsAsNull() {
-	Campaign c = tester.getCampaignById(ID);
-	assertTrue(c.getCampaingSiteUrl() == null);
-	assertTrue(c.getSiteId() == null);
-	assertTrue(c.getType() == null);
+    public void fundingReturnedShouldHaveCorrectId() {
+	Funding f = tester.getFundingByProviderId(PROVIDER_ID);
+	assertEquals(PROVIDER_ID, f.getProviderId());
     }
 
 }

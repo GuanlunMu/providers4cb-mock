@@ -12,9 +12,10 @@ import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
 @Configuration
 @EnableSwagger
 public class SwaggerConfig {
-	private SpringSwaggerConfig springSwaggerConfig;
 
 	@Autowired
+	private SpringSwaggerConfig springSwaggerConfig;
+
 	public void setSpringSwaggerConfig(SpringSwaggerConfig springSwaggerConfig) {
 		this.springSwaggerConfig = springSwaggerConfig;
 	}
@@ -25,8 +26,8 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		ApiInfo apiInfo = new ApiInfo("Mock Service API", "API for mocked third party fundraising provider", "API terms of service",
-				"GuanlunMu@gmail.com", "Mock API Licence Type", "Mock API License URL");
+		ApiInfo apiInfo = new ApiInfo("Mock Service API", "API for mocked third party fundraising provider",
+				"API terms of service", "GuanlunMu@gmail.com", "Mock API Licence Type", "Mock API License URL");
 		return apiInfo;
 	}
 
