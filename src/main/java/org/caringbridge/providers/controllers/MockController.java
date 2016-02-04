@@ -1,9 +1,10 @@
 package org.caringbridge.providers.controllers;
 
-
 import org.caringbridge.providers.model.Funding;
 import org.caringbridge.providers.model.Provider;
 import org.caringbridge.providers.services.MockService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,13 @@ import com.wordnik.swagger.annotations.ApiResponse;
 public class MockController {
 
 	/**
+	 * The logger that will serve the logging for all controller-related
+	 * information.
+	 */
+
+	private static final Logger LOG = LoggerFactory.getLogger("Mock Controllers");
+
+	/**
 	 * The mockservice that will return FundingDetail.
 	 */
 	@Autowired
@@ -35,8 +43,7 @@ public class MockController {
 	/**
 	 * The controller that handle the GET request for Provider information.
 	 * 
-	 * @param type
-	 *            the type of the provider.
+	 * 
 	 * @return the Provider information.
 	 */
 
@@ -44,6 +51,7 @@ public class MockController {
 	@ApiResponse(code = 404, message = "No Information Found for this Provider")
 	@RequestMapping(path = "/mock", method = RequestMethod.GET)
 	public Provider getProvider() {
+		getLog().info("Calling mock service to get provider information......");
 		return mockService.getProviderInfo();
 
 	}
@@ -59,8 +67,8 @@ public class MockController {
 	@ApiResponse(code = 404, message = "No Funding Found")
 	@RequestMapping(path = "/mock/funding/{provider_id}", method = RequestMethod.GET)
 	public Funding getFunding(
-			@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) 
-			@PathVariable("provider_id") final String providerId) {
+		@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) @PathVariable("provider_id") final String providerId) {
+		getLog().info("Calling mock service to get Funding based on provider id " + providerId);
 		return mockService.getFundingByProviderId(providerId);
 	}
 
@@ -77,6 +85,13 @@ public class MockController {
 	 */
 	public void setMockService(final MockService mockService) {
 		this.mockService = mockService;
+	}
+	
+	/**
+	 * @return the log
+	 */
+	public static Logger getLog() {
+		return LOG;
 	}
 
 }

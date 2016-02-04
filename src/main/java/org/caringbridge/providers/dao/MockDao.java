@@ -2,6 +2,8 @@ package org.caringbridge.providers.dao;
 
 import org.caringbridge.providers.model.Funding;
 import org.caringbridge.providers.model.Provider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,6 +14,19 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class MockDao {
+	
+	/**
+	 * The logger that will serve the logging for all DAO-related
+	 * information.
+	 */
+	private static final Logger LOG = LoggerFactory.getLogger("Mock Dao");
+
+	/**
+	 * @return the log
+	 */
+	public static Logger getLog() {
+		return LOG;
+	}
 
 	/**
 	 * The upper bound for randomly generated value of goal.
@@ -47,9 +62,11 @@ public class MockDao {
 	 * @return Funding that provided by type "mock" on providerId
 	 */
 	public Funding getFundingByProviderId(final String providerId) {
+		getLog().info("Generating random value for Funding......");
 		Funding result = new Funding(GOAL_UPPER_BOUND, CONTRIBUTION_COUNT_UPPER_BOUND);
 		result.setProviderId(providerId);
 		result.setUrl(URL);
+		getLog().info("Returning the Funding......");
 		return result;
 
 	}
@@ -63,10 +80,12 @@ public class MockDao {
 	 */
 
 	public Provider getProviderInfo(){
+		getLog().info("Generating provider information......");
 		Provider result = new Provider();
 		result.setName(TYPE);
 		result.setUrl(URL);
 		result.setDescription(DESCRIPTION);
+		getLog().info("Returning the provider information......");
 		return result;
 	}
 }

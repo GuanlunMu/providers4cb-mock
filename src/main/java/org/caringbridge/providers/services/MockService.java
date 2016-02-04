@@ -3,6 +3,8 @@ package org.caringbridge.providers.services;
 import org.caringbridge.providers.dao.MockDao;
 import org.caringbridge.providers.model.Funding;
 import org.caringbridge.providers.model.Provider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class MockService {
+	
+	/**
+	 * The logger that will serve the logging for all service-related
+	 * information.
+	 */
+	private static final Logger LOG = LoggerFactory.getLogger("Mock Service");
+
+	/**
+	 * @return the log
+	 */
+	public static Logger getLog() {
+		return LOG;
+	}
 
 	/**
 	 * The MockDao is used for accessing the wanted campaign.
@@ -44,6 +59,7 @@ public class MockService {
 	 * @return the Funding based on the provider id
 	 */
 	public Funding getFundingByProviderId(final String providerId) {
+		getLog().info("Calling mock DAO to get Funding based on provider id " + providerId + "......");
 		return mockDao.getFundingByProviderId(providerId);
 
 	}
@@ -57,6 +73,7 @@ public class MockService {
 	 */
 
 	public Provider getProviderInfo() {
+		getLog().info("Calling mock DAO to get provider information......");
 		return mockDao.getProviderInfo();
 	}
 
