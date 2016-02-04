@@ -8,7 +8,7 @@
   </appender>
 
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>/var/log/microservices/campaigns/campaigns_app.log</file>
+    <file>/var/log/microservices/providers_mock/providers_mock_app.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
       <fileNamePattern>campaigns_app.%d{yyyy-MM-dd}.log</fileNamePattern>
