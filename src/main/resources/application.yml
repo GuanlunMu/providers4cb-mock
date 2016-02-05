@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: dev
+    
+---
+spring:
+  profiles: dev
+
+server:
+  port: 12001
+    
+---
+spring:
+  profiles: qa
+  
+server:
+  port: 12001
+  undertow:
+    accesslog:
+      dir: /var/log/microservices/providers_mock
+      enabled: true
+      pattern: '%h %l %u %t "%r" %s %b %{i,X-Request-Id} %D %T'
+ 

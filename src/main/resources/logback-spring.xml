@@ -3,12 +3,12 @@
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>logback: %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} requestId=%X{X-Request-Id} - %msg%n</pattern>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} requestId=%X{X-Request-Id} - %msg%n</pattern>
     </encoder>
   </appender>
 
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>/var/log/microservices/campaigns/campaigns_app.log</file>
+    <file>/var/log/microservices/providers_mock/providers_mock_app.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
       <fileNamePattern>campaigns_app.%d{yyyy-MM-dd}.log</fileNamePattern>
