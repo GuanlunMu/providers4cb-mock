@@ -12,24 +12,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author guanlun.mu
  *
  */
-public class Funding {
+public class Campaign {
 
 	/**
 	 * Default constructor.
 	 */
-	public Funding() {
+	public Campaign() {
 		super();
 	}
 
 	/**
-	 * The constructor used for generate a fake Funding with random data.
+	 * The constructor used for generate a fake Campaign with random data.
 	 *
 	 * @param goalBound
 	 *            the upper bound for the random goal number
 	 * @param countBound
 	 *            the upper bound for the random contribution_count
 	 */
-	public Funding(final double goalBound, final int countBound) {
+	public Campaign(final double goalBound, final int countBound) {
 		DecimalFormat df = new DecimalFormat("0.00");
 		double goalRaw = ThreadLocalRandom.current().nextDouble(goalBound);
 		this.goal = format(goalRaw, df);
@@ -43,7 +43,7 @@ public class Funding {
 
 
 	/**
-	 * The provider id used to identify the Funding.
+	 * The provider id used to identify the Campaign.
 	 */
 	@JsonProperty(value = "provider_id", required = true)
 	private String providerId;
@@ -70,7 +70,7 @@ public class Funding {
 	private int contributionsCount;
 
 	/**
-	 * The url used to retrieve the fundingdetail.
+	 * The url used to retrieve the Campaign.
 	 */
 	@JsonProperty(value = "url", required = true)
 	private String url;

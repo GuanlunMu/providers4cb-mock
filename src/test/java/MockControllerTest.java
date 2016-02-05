@@ -42,7 +42,7 @@ public class MockControllerTest {
 	@Test
 	public void controllerShouldReturnRightData() throws Exception {
 
-		RequestBuilder mockGet = MockMvcRequestBuilders.get("/provider/mock/funding/" + PROVIDER_ID);
+		RequestBuilder mockGet = MockMvcRequestBuilders.get("/providers/mock/campaigns/" + PROVIDER_ID);
 
 		ResultActions response = mockMvc.perform(mockGet);
 		response.andDo(MockMvcResultHandlers.print()).andExpect(status().is(200))

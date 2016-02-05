@@ -1,13 +1,13 @@
 package org.caringbridge.providers.dao;
 
-import org.caringbridge.providers.model.Funding;
+import org.caringbridge.providers.model.Campaign;
 import org.caringbridge.providers.model.Provider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 /**
- * The DAO for getting Funding based on provider ID.
+ * The DAO for getting Campaign based on provider ID.
  *
  * @author guanlun.mu
  *
@@ -51,22 +51,22 @@ public class MockDao {
 	/**
 	 * The description of the Provider.
 	 */
-	public static final String DESCRIPTION = "This is a mock provider service generating fake Funding";
+	public static final String DESCRIPTION = "This is a mock provider service generating fake Campaign";
 
 	/**
-	 * Returning the Funding based on provider_id, in this case, it will only
-	 * return randomly generated Funding.
+	 * Returning the Campaign based on provider_id, in this case, it will only
+	 * return randomly generated Campaign.
 	 *
 	 * @param providerId
 	 *            the identifier to identify the campaign
-	 * @return Funding that provided by type "mock" on providerId
+	 * @return Campaign that provided by type "mock" on providerId
 	 */
-	public Funding getFundingByProviderId(final String providerId) {
-		getLog().info("Generating random value for Funding......");
-		Funding result = new Funding(GOAL_UPPER_BOUND, CONTRIBUTION_COUNT_UPPER_BOUND);
+	public Campaign getCampaignByProviderId(final String providerId) {
+		getLog().info("Generating random value for Campaign......");
+		Campaign result = new Campaign(GOAL_UPPER_BOUND, CONTRIBUTION_COUNT_UPPER_BOUND);
 		result.setProviderId(providerId);
 		result.setUrl(URL);
-		getLog().info("Returning the Funding......");
+		getLog().info("Returning the Campaign......");
 		return result;
 
 	}

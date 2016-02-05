@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.caringbridge.providers.CbMockProviderApplication;
 import org.caringbridge.providers.dao.MockDao;
-import org.caringbridge.providers.model.Funding;
+import org.caringbridge.providers.model.Campaign;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +26,16 @@ public class MockDaoTest {
      * contribution_total smaller than goal
      */
     @Test
-    public void fundingReturnedShouldHaveCorrectNumber() {
-	Funding f = tester.getFundingByProviderId(PROVIDER_ID);
+    public void CampaignReturnedShouldHaveCorrectNumber() {
+	Campaign f = tester.getCampaignByProviderId(PROVIDER_ID);
 	assertTrue(f.getContributionsCount() < 100);
 	assertTrue(f.getGoal() < 10000);
 	assertTrue(f.getContributionsTotal() < f.getGoal());
     }
 
     @Test
-    public void fundingReturnedShouldHaveCorrectId() {
-	Funding f = tester.getFundingByProviderId(PROVIDER_ID);
+    public void CampaignReturnedShouldHaveCorrectId() {
+	Campaign f = tester.getCampaignByProviderId(PROVIDER_ID);
 	assertEquals(PROVIDER_ID, f.getProviderId());
     }
 

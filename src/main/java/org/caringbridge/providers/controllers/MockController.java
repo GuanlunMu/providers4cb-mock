@@ -1,6 +1,6 @@
 package org.caringbridge.providers.controllers;
 
-import org.caringbridge.providers.model.Funding;
+import org.caringbridge.providers.model.Campaign;
 import org.caringbridge.providers.model.Provider;
 import org.caringbridge.providers.services.MockService;
 import org.slf4j.Logger;
@@ -22,9 +22,9 @@ import com.wordnik.swagger.annotations.ApiResponse;
  * @author guanlun.mu
  *
  */
-@Api(basePath = "/provider", value = "/provider", description = "The controller that handle the request on /provider and return corresponding details")
+@Api(basePath = "/providers", value = "/providers", description = "The controller that handle the request on /provider and return corresponding details")
 @RestController
-@RequestMapping(path = "/provider")
+@RequestMapping(path = "/providers")
 public class MockController {
 
 	/**
@@ -35,7 +35,9 @@ public class MockController {
 	private static final Logger LOG = LoggerFactory.getLogger("Mock Controllers");
 
 	/**
-	 * The mockservice that will return FundingDetail.
+	 * The mockservice that will return Campaign
+	 * 
+	 * .
 	 */
 	@Autowired
 	private MockService mockService;
@@ -60,16 +62,16 @@ public class MockController {
 	 * The controller for handling the mock-data request.
 	 *
 	 * @param providerId
-	 *            the provider id to identify the funding.
-	 * @return The Funding object
+	 *            the provider id to identify the campaign.
+	 * @return The Campaign object
 	 */
-	@ApiOperation(value = "/mock/funding/{provider_id}", notes = "Getting FundingDetail based on provider id", produces = "application/json", httpMethod = "GET")
-	@ApiResponse(code = 404, message = "No Funding Found")
-	@RequestMapping(path = "/mock/funding/{provider_id}", method = RequestMethod.GET)
-	public Funding getFunding(
+	@ApiOperation(value = "/mock/campaigns/{provider_id}", notes = "Getting Campaigns based on provider id", produces = "application/json", httpMethod = "GET")
+	@ApiResponse(code = 404, message = "No Campaigns Found")
+	@RequestMapping(path = "/mock/campaigns/{provider_id}", method = RequestMethod.GET)
+	public Campaign getCampaigns(
 		@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) @PathVariable("provider_id") final String providerId) {
-		getLog().info("Calling mock service to get Funding based on provider id " + providerId);
-		return mockService.getFundingByProviderId(providerId);
+		getLog().info("Calling mock service to get Campaign based on provider id " + providerId);
+		return mockService.getCampaignByProviderId(providerId);
 	}
 
 	/**
