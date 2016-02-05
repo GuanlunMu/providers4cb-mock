@@ -26,9 +26,6 @@ public class MockControllerTest {
 
 	private MockMvc mockMvc;
 
-//	@Autowired 
-//	private SpringSwaggerConfig springSwaggerConfig;
-	
 	@Autowired
 	private MockController mc;
 
