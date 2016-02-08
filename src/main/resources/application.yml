@@ -5,10 +5,10 @@ spring:
 ---
 spring:
   profiles: dev
-
+    
 server:
   port: 12001
-    
+
 ---
 spring:
   profiles: qa
@@ -19,5 +19,5 @@ server:
     accesslog:
       dir: /var/log/microservices/providers_mock
       enabled: true
-      pattern: '%h %l %u %t "%r" %s %b %{i,X-Request-Id} %D %T'
+      pattern: '%h %l %u %t "%r" %s %b %{i,X-Request-Id} %D'
  
