@@ -32,7 +32,7 @@ public class MockController {
 	 * information.
 	 */
 
-	private static final Logger LOG = LoggerFactory.getLogger("Mock Controllers");
+	private static final Logger LOG = LoggerFactory.getLogger(MockController.class);
 
 	/**
 	 * The mockservice that will return Campaign

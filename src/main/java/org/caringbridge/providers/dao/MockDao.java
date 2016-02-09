@@ -19,7 +19,7 @@ public class MockDao {
 	 * The logger that will serve the logging for all DAO-related
 	 * information.
 	 */
-	private static final Logger LOG = LoggerFactory.getLogger("Mock Dao");
+	private static final Logger LOG = LoggerFactory.getLogger(MockDao.class);
 
 	/**
 	 * @return the log
