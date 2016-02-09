@@ -21,7 +21,7 @@ public class MockService {
 	 * The logger that will serve the logging for all service-related
 	 * information.
 	 */
-	private static final Logger LOG = LoggerFactory.getLogger("Mock Service");
+	private static final Logger LOG = LoggerFactory.getLogger(MockService.class);
 
 	/**
 	 * @return the log
