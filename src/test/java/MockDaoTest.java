@@ -33,10 +33,10 @@ public class MockDaoTest {
 	assertTrue(f.getContributionsTotal() < f.getGoal());
     }
 
-//    @Test
-//    public void FundingDetailsReturnedShouldHaveCorrectId() {
-//	FundingDetails f = tester.getFundingDetailsByProviderId(PROVIDER_ID);
-//	assertEquals(PROVIDER_ID, f.getProviderId());
-//    }
+    @Test
+    public void FundingDetailsReturnedShouldHaveCorrectId() {
+	FundingDetails f = tester.getFundingDetailsByProviderId(PROVIDER_ID);
+	assertEquals(PROVIDER_ID, f.getProviderId());
+    }
 
 }

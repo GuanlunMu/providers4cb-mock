@@ -78,7 +78,7 @@ public class MockDao {
 		int contributionsCount = ThreadLocalRandom.current().nextInt(CONTRIBUTION_COUNT_UPPER_BOUND);
 		
 		FundingDetails result = new FundingDetails(goal,contributionsTotal,contributionsCount);
-//		result.setProviderId(providerId);
+		result.setProviderId(providerId);
 		result.setUrl(URL);
 		getLog().info("Returning the FundingDetails......");
 		return result;
