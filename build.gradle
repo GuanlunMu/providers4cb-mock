@@ -33,6 +33,9 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	 maven {
+       url "http://jenkins.caringbridge.org:8081/artifactory/libs-snapshot/"
+   }
 }
 
 dependencies {
@@ -44,10 +47,16 @@ dependencies {
 	// Undertow will serve as the application's HTTP container
 	compile('org.springframework.boot:spring-boot-starter-undertow')
 	compile('com.mangofactory:swagger-springmvc:1.0.2')
+	
+	//CB common library
+	compile(group: 'org.caringbridge', name: 'cb-services-common', version: '1.0.0-20160210.151725-6')	
+	
 	//Test dependencies
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('cglib:cglib-nodep:3.2.0')
 	testCompile('com.jayway.jsonpath:json-path:2.1.0')
+	
+	
 }
 
 

@@ -1,13 +1,16 @@
 package org.caringbridge.providers.dao;
 
-import org.caringbridge.providers.model.Campaign;
+import java.text.DecimalFormat;
+import java.util.concurrent.ThreadLocalRandom;
+
+import org.caringbridge.common.services.rep.FundingDetails;
 import org.caringbridge.providers.model.Provider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 /**
- * The DAO for getting Campaign based on provider ID.
+ * The DAO for getting FundingDetails based on provider ID.
  *
  * @author guanlun.mu
  *
@@ -51,22 +54,33 @@ public class MockDao {
 	/**
 	 * The description of the Provider.
 	 */
-	public static final String DESCRIPTION = "This is a mock provider service generating fake Campaign";
+	public static final String DESCRIPTION = "This is a mock provider service generating fake FundingDetails";
 
 	/**
-	 * Returning the Campaign based on provider_id, in this case, it will only
-	 * return randomly generated Campaign.
+	 * Returning the FundingDetails based on provider_id, in this case, it will only
+	 * return randomly generated FundingDetails.
 	 *
 	 * @param providerId
-	 *            the identifier to identify the campaign
-	 * @return Campaign that provided by type "mock" on providerId
+	 *            the identifier to identify the FundingDetails
+	 * @return FundingDetails that provided by type "mock" on providerId
 	 */
-	public Campaign getCampaignByProviderId(final String providerId) {
-		getLog().info("Generating random value for Campaign......");
-		Campaign result = new Campaign(GOAL_UPPER_BOUND, CONTRIBUTION_COUNT_UPPER_BOUND);
-		result.setProviderId(providerId);
+	public FundingDetails getFundingDetailsByProviderId(final String providerId) {
+		getLog().info("Generating random value for FundingDetails......");
+		
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		double goalRaw = ThreadLocalRandom.current().nextDouble(GOAL_UPPER_BOUND);
+		double goal = format(goalRaw, df);
+
+		double conTotalRaw = ThreadLocalRandom.current().nextDouble(goal);
+		double contributionsTotal = format(conTotalRaw, df);
+
+		int contributionsCount = ThreadLocalRandom.current().nextInt(CONTRIBUTION_COUNT_UPPER_BOUND);
+		
+		FundingDetails result = new FundingDetails(goal,contributionsTotal,contributionsCount);
+//		result.setProviderId(providerId);
 		result.setUrl(URL);
-		getLog().info("Returning the Campaign......");
+		getLog().info("Returning the FundingDetails......");
 		return result;
 
 	}
@@ -87,5 +101,18 @@ public class MockDao {
 		result.setDescription(DESCRIPTION);
 		getLog().info("Returning the provider information......");
 		return result;
+	}
+	
+	/**
+	 * A help method to round the double value to two significant value.
+	 *
+	 * @param d
+	 *            the double need to be formated
+	 * @param df
+	 *            the format for this double
+	 * @return formatted value
+	 */
+	private double format(final double d, final DecimalFormat df) {
+		return Double.valueOf(df.format(d));
 	}
 }

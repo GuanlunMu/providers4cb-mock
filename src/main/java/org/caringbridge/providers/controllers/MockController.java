@@ -1,6 +1,6 @@
 package org.caringbridge.providers.controllers;
 
-import org.caringbridge.providers.model.Campaign;
+import org.caringbridge.common.services.rep.FundingDetails;
 import org.caringbridge.providers.model.Provider;
 import org.caringbridge.providers.services.MockService;
 import org.slf4j.Logger;
@@ -35,7 +35,7 @@ public class MockController {
 	private static final Logger LOG = LoggerFactory.getLogger("Mock Controllers");
 
 	/**
-	 * The mockservice that will return Campaign
+	 * The mockservice that will return FundingDetails
 	 * 
 	 * .
 	 */
@@ -62,16 +62,16 @@ public class MockController {
 	 * The controller for handling the mock-data request.
 	 *
 	 * @param providerId
-	 *            the provider id to identify the campaign.
-	 * @return The Campaign object
+	 *            the provider id to identify the FundingDetails.
+	 * @return The FundingDetails object
 	 */
-	@ApiOperation(value = "/mock/campaigns/{provider_id}", notes = "Getting Campaigns based on provider id", produces = "application/json", httpMethod = "GET")
-	@ApiResponse(code = 404, message = "No Campaigns Found")
+	@ApiOperation(value = "/mock/campaigns/{provider_id}", notes = "Getting FundingDetails based on provider id", produces = "application/json", httpMethod = "GET")
+	@ApiResponse(code = 404, message = "No FundingDetails Found")
 	@RequestMapping(path = "/mock/campaigns/{provider_id}", method = RequestMethod.GET)
-	public Campaign getCampaigns(
-		@ApiParam(name = "provider_id", value = "identifier of the campaign", required = true) @PathVariable("provider_id") final String providerId) {
-		getLog().info("Calling mock service to get Campaign based on provider id " + providerId);
-		return mockService.getCampaignByProviderId(providerId);
+	public FundingDetails getFundingDetails(
+		@ApiParam(name = "provider_id", value = "identifier of the FundingDetails", required = true) @PathVariable("provider_id") final String providerId) {
+		getLog().info("Calling mock service to get FundingDetails based on provider id " + providerId);
+		return mockService.getFundingDetailsByProviderId(providerId);
 	}
 
 	/**

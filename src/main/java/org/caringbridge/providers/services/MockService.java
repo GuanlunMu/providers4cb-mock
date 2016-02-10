@@ -1,7 +1,7 @@
 package org.caringbridge.providers.services;
 
+import org.caringbridge.common.services.rep.FundingDetails;
 import org.caringbridge.providers.dao.MockDao;
-import org.caringbridge.providers.model.Campaign;
 import org.caringbridge.providers.model.Provider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +31,7 @@ public class MockService {
 	}
 
 	/**
-	 * The MockDao is used for accessing the wanted campaign.
+	 * The MockDao is used for accessing the wanted FundingDetails.
 	 */
 	@Autowired
 	private MockDao mockDao;
@@ -52,15 +52,15 @@ public class MockService {
 	}
 
 	/**
-	 * Return Campaign based on the provider id.
+	 * Return FundingDetails based on the provider id.
 	 *
 	 * @param providerId
-	 *            the provider id used to identify the Campaign
-	 * @return the Campaign based on the provider id
+	 *            the provider id used to identify the FundingDetails
+	 * @return the FundingDetails based on the provider id
 	 */
-	public Campaign getCampaignByProviderId(final String providerId) {
-		getLog().info("Calling mock DAO to get Campaign based on provider id " + providerId + "......");
-		return mockDao.getCampaignByProviderId(providerId);
+	public FundingDetails getFundingDetailsByProviderId(final String providerId) {
+		getLog().info("Calling mock DAO to get FundingDetails based on provider id " + providerId + "......");
+		return mockDao.getFundingDetailsByProviderId(providerId);
 
 	}
 

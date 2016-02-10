@@ -1,7 +1,7 @@
 import static org.junit.Assert.*;
 
+import org.caringbridge.common.services.rep.FundingDetails;
 import org.caringbridge.providers.CbMockProviderApplication;
-import org.caringbridge.providers.model.Campaign;
 import org.caringbridge.providers.services.MockService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,7 @@ public class MockServiceTest {
 
     @Test
     public void serviceShouldReturnRightData(){
-	Campaign tester = ms.getCampaignByProviderId(PROVIDER_ID);
+	FundingDetails tester = ms.getFundingDetailsByProviderId(PROVIDER_ID);
 	assertEquals((int)tester.getContributionsCount(),tester.getContributionsCount());
 	assertEquals((double)tester.getContributionsTotal(),tester.getContributionsTotal(),0.0);
 	assertEquals((double)tester.getGoal(),tester.getGoal(),0.0);
