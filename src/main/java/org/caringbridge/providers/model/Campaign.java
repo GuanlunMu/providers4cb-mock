@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 /**
  * The model for the Campaign object.
@@ -30,7 +32,7 @@ public class Campaign {
      *            the upperbound for the random contribution_count
      */
     public Campaign(final double goalBound, final int countBound) {
-	DecimalFormat df = new DecimalFormat("0.00");
+	DecimalFormat df = new DecimalFormat(".##", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
 	double goalRaw = ThreadLocalRandom.current().nextDouble(goalBound);
 	this.goal = format(goalRaw, df);
 

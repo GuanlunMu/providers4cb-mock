@@ -5,3 +5,5 @@
 .settings
 .project
 .gradle
+/.nb-gradle/
+
