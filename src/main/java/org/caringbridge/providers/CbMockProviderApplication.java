@@ -1,5 +1,7 @@
 package org.caringbridge.providers;
 
+import org.caringbridge.common.services.annotations.EnableCorrelationFilter;
+import org.caringbridge.common.services.annotations.EnableTrackRequestTime;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,6 +16,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 @SpringBootApplication
 @EnableAutoConfiguration
+@EnableCorrelationFilter
+@EnableTrackRequestTime
 @ComponentScan("org.caringbridge.providers")
 public class CbMockProviderApplication {
 
