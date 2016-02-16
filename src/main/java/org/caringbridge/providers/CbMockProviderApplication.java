@@ -1,7 +1,7 @@
 package org.caringbridge.providers;
 
 import org.caringbridge.common.services.annotations.EnableCorrelationFilter;
-import org.caringbridge.providers.annotations.EnableTrackRequestTime;
+import org.caringbridge.common.services.annotations.EnableTrackRequestTime;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
