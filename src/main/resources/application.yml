@@ -5,10 +5,10 @@ spring:
 ---
 spring:
   profiles: dev
-    
+ 
 server:
   port: 12001
-
+ 
 ---
 spring:
   profiles: qa
