@@ -53,7 +53,7 @@ dependencies {
 	// Undertow will serve as the application's HTTP container
 	compile('org.springframework.boot:spring-boot-starter-undertow')
 	compile('com.mangofactory:swagger-springmvc:1.0.2')
-	
+        compile("org.springframework.boot:spring-boot-starter-actuator")
 	//CB common library
 	compile(group: 'org.caringbridge', name: 'cb-services-common', version: '1.+')
 

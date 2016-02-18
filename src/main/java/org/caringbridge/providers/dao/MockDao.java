@@ -1,6 +1,8 @@
 package org.caringbridge.providers.dao;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.caringbridge.common.services.rep.FundingDetails;
@@ -67,7 +69,7 @@ public class MockDao {
 	public FundingDetails getFundingDetailsByProviderId(final String providerId) {
 		getLog().info("Generating random value for FundingDetails......");
 		
-		DecimalFormat df = new DecimalFormat("0.00");
+		DecimalFormat df = new DecimalFormat("#.00", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
 		
 		double goalRaw = ThreadLocalRandom.current().nextDouble(GOAL_UPPER_BOUND);
 		double goal = format(goalRaw, df);
